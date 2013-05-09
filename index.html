@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#applediv{
+		       	position:relative;
+		        border-radius:50%;
+		        background-image: url('img/logo.png');
+		        background-repeat: no-repeat;
+		        width: 200px;
+		        height: 200px;            
+		        text-align:center;
+		}
+
+		/* color progression*/
+		.first{background-color: #FFFFFF;}        
+		.second{background-color:  #EBEBEB;}    
+		.third{background-color:#D6D6D6;}    
+		.fourth{background-color: #AAAAAA;}    
+		.fifth{background-color:#929292;}    
+		.sixth{background-color:#606060;}    
+		.seventh{background-color: #444444;}    
+		.eight{background-color:#232323;}    
+		.ninth{background-color:#000000;}  
+	</style>
+	<script type="text/javascript">
+	// js tricks for apple breathing
+	var progression=["first","second","third","fourth","fifth","sixth","seventh","ninth",
+	"seventh","sixth","fifth","fourth","third","second","first" ];
+
+	function  endlessMachineCallback(){
+	    var x= 0;
+	    var progressionIterator = self.setInterval(function(){
+	            document.getElementById("applediv").className=progression[x];
+	            x++;
+
+	            console.log("Running Apple breathing animation  ");
+	            if (x >= 17) clearInterval(progressionIterator);
+	        },300);
+	    }
+	    
+
+    var endlessMachine = self.setInterval(function(){
+        endlessMachineCallback();
+    }, 5100);
+
+
+	</script>
+</head>
+<body>
+	<h3>Breathing Apple - simulates the sleep light</h3>
+	<a href="#">
+		<div id="applediv" class=""></div>
+	</a>
+</body>
+</html>
